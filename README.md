@@ -1,7 +1,5 @@
 # LP2 - Exercicios de Orientacao a Objetos
 
-Repositorio com dois projetos Java independentes.
-
 ## Exercicio 1 - Whatsapp
 
 Simula um aplicativo de mensagens. O Whatsapp guarda uma lista de contatos e uma lista de mensagens enviadas. Cada mensagem tem um destinatario, a hora de envio e um conteudo, e pode ser de tres tipos:

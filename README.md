@@ -1,51 +1,27 @@
 # LP2 - Exercicios de Orientacao a Objetos
 
-Repositorio com dois projetos Java independentes da disciplina de Linguagem de Programacao II.
-
-## Estrutura
-
-```
-lp2/
-├── lp2-exercicio1/   Whatsapp (heranca e classe abstrata)
-└── lp2-exercicio2/   Dominio de Compras (interface)
-```
-
-Cada pasta e um projeto Maven separado, com seu proprio `pom.xml`.
-
-## Requisitos
-
-- Java 17 ou superior
-- Maven (opcional, a IDE tambem abre os projetos)
+Repositorio com dois projetos Java independentes.
 
 ## Exercicio 1 - Whatsapp
 
-Pacote: `edu.fatec.lp2.exercicio1`
+Simula um aplicativo de mensagens. O Whatsapp guarda uma lista de contatos e uma lista de mensagens enviadas. Cada mensagem tem um destinatario, a hora de envio e um conteudo, e pode ser de tres tipos:
 
-- `Contatinho`: nome e celular do contato.
-- `Mensagem`: classe abstrata com destinatario, hora de envio e conteudo. Possui o metodo abstrato `sendMessage(String)`, que retorna a propria instancia.
-- `MsgTexto`, `MsgAudio` e `MsgFoto`: tipos de mensagem que herdam de `Mensagem`.
-- `Whatsapp`: guarda os arrays de contatos e mensagens, recebidos pelo construtor, e lista ambos.
+- Texto: guarda a quantidade de caracteres da mensagem.
+- Audio: guarda a duracao do audio em segundos.
+- Foto: guarda o tamanho da imagem em KB.
 
-Correcoes no diagrama:
+Ao executar, o programa lista todos os contatos e todas as mensagens enviadas.
 
-- `contatos` e `mensagens` passaram a ser arrays.
-- `toString()` retorna `String` em vez de `void`.
+![Diagrama do Exercicio 1](lp2-exercicio1/diagrama.png)
 
 ## Exercicio 2 - Dominio de Compras
 
-Pacote: `edu.fatec.lp2.exercicio2`
+Simula as compras em um supermercado. Cada produto pertence a um supermercado e possui preco e um desconto maximo permitido. O cliente monta itens de compra, cada um com um produto, a quantidade e um desconto que nao pode passar do maximo do produto.
 
-- `Supermercado`: possui apenas o nome.
-- `Produto`: dados do produto e o supermercado ao qual pertence. O `toString()` retorna o nome.
-- `ItemCompra`: um produto, a quantidade e o desconto (em %), limitado entre 0 e o `descontoMaximo` do produto.
-- `ListaCompra`: armazena itens ate a quantidade maxima definida no construtor.
-- `Calculavel`: interface com `calcularPreco()`, implementada por `ItemCompra` e `ListaCompra`.
+Os itens sao adicionados a uma lista de compras, que tem um limite de itens. O programa calcula o preco de cada item separadamente e o preco total da lista.
 
-Correcoes no diagrama:
-
-- As classes foram implementadas como concretas, pois precisam ser instanciadas.
-- `ListaCompra` ganhou o atributo `qtdeItens` para controlar o limite de itens.
+![Diagrama do Exercicio 2](lp2-exercicio2/diagrama.png)
 
 ## Como executar
 
-Abra a pasta do exercicio na IDE e execute a classe `Main` do pacote correspondente.
+Abra a pasta do exercicio desejado (`lp2-exercicio1` ou `lp2-exercicio2`) na IDE e execute a classe `Main`.
